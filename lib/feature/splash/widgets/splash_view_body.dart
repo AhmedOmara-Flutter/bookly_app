@@ -50,7 +50,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   void goToHome() {
-    _timer = Timer(const Duration(seconds: Constants.timerDuration), () {
+    _timer = Timer(const Duration(seconds: Constants.timerDuration),
+            () {
       Get.to(() => const HomeView(), transition: Transition.fade);
     });
   }
@@ -60,6 +61,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       vsync: this,
       duration: const Duration(seconds: Constants.animationDuration),
     );
+
     _slideAnimation = Tween<Offset>(
       begin: const Offset(0, 10),
       end: const Offset(0, 0),
