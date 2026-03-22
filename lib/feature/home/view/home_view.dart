@@ -2,8 +2,6 @@ import 'package:bookly_app/feature/home/widgets/custom_app_bar.dart';
 import 'package:bookly_app/feature/home/widgets/custom_best_seller_list_view.dart';
 import 'package:bookly_app/feature/home/widgets/custom_horizontal_list_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import '../../../generated/assets.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -21,20 +19,28 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(height: 10,),
-        CustomAppBar(),
-        SizedBox(height: 30,),
-        CustomHorizontalListView(),
-        SizedBox(height: 40,),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Text('Best Seller'),
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 10,),
+              CustomAppBar(),
+              SizedBox(height: 30,),
+              CustomHorizontalListView(),
+              SizedBox(height: 40,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Text('Best Seller'),
+              ),
+              SizedBox(height: 20,),
+            ],
+          ),
         ),
-        SizedBox(height: 20,),
-        CustomBestSellerListView()
+        SliverPadding(
+            padding: EdgeInsetsGeometry.only(left: 20,right: 20,bottom: 20),
+            sliver: CustomBestSellerListView())
       ],
     );
   }

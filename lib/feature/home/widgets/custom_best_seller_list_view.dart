@@ -41,13 +41,10 @@ class _CustomBestSellerListViewState extends State<CustomBestSellerListView> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.separated(
-        padding: EdgeInsets.symmetric(horizontal: 20),
-        itemBuilder: (context, index) => CustomBestSellerListViewItem(viewModel: books[index],),
-        separatorBuilder: (context, index) => SizedBox(height: 10),
-        itemCount: books.length,
-      ),
+    return SliverList.separated(
+      itemBuilder: (context, index) => CustomBestSellerListViewItem(viewModel: books[index],),
+      separatorBuilder: (context, index) => SizedBox(height: 10),
+      itemCount: books.length,
     );
   }
 }
