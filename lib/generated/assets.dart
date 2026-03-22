@@ -12,7 +12,18 @@ class Assets {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  final AssetGenImage book1High = const AssetGenImage(
+    'assets/images/Book 1 High.png',
+  );
+  final AssetGenImage book2High = const AssetGenImage(
+    'assets/images/Book 2 High.png',
+  );
   final SvgGenImage logo = const SvgGenImage('assets/images/Logo.svg');
+  final AssetGenImage book = const AssetGenImage('assets/images/book.png');
+  final AssetGenImage book1 = const AssetGenImage('assets/images/book (1).png');
+  final AssetGenImage harryPotterAndThe = const AssetGenImage(
+    'assets/images/harry-potter-and-the.png',
+  );
 }
 
 class AssetGenImage {
