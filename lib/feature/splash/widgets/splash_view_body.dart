@@ -1,11 +1,10 @@
 import 'dart:async';
-
 import 'package:bookly_app/core/resources/constants.dart';
-import 'package:bookly_app/feature/home/view/home_view.dart';
+import 'package:bookly_app/core/utils.dart';
 import 'package:bookly_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -52,7 +51,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void goToHome() {
     _timer = Timer(const Duration(seconds: Constants.timerDuration),
             () {
-      Get.to(() => const HomeView(), transition: Transition.fade);
+      GoRouter.of(context).go(AppRouter.homeView);
+
     });
   }
 

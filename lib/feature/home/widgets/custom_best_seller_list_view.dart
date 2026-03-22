@@ -30,6 +30,22 @@ class _CustomBestSellerListViewState extends State<CustomBestSellerListView> {
       numOfReviews: 1854,
     ),
     CustomBestSellerListViewModel(
+      title: 'The Jungle Book',
+      author: 'Rudyard Kipling',
+      price: '11.99 €',
+      image: Assets.images.book.path,
+      rating: 4.2,
+      numOfReviews: 1854,
+    ),
+    CustomBestSellerListViewModel(
+      title: 'Star Wars Return of the Jedi',
+      author: 'James Kahn',
+      price: '10.99 €',
+      image: Assets.images.book1.path,
+      rating: 4.5,
+      numOfReviews: 5152,
+    ),
+    CustomBestSellerListViewModel(
       title: 'Star Wars Return of the Jedi',
       author: 'James Kahn',
       price: '10.99 €',
