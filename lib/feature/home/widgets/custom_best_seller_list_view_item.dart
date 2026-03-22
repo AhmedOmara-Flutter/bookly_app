@@ -1,6 +1,8 @@
 import 'package:bookly_app/core/models/custom_best_seller_list_view_model.dart';
 import 'package:flutter/material.dart';
 
+import 'book_rating.dart';
+
 class CustomBestSellerListViewItem extends StatelessWidget {
   final CustomBestSellerListViewModel viewModel;
 
@@ -11,7 +13,7 @@ class CustomBestSellerListViewItem extends StatelessWidget {
     return Row(
       children: [
         Container(
-          height: 150,
+          height: 120,
           width: 100,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
@@ -46,13 +48,9 @@ class CustomBestSellerListViewItem extends StatelessWidget {
                   ),
                   SizedBox(width: 10),
                   Spacer(),
-                  Icon(Icons.star, color: Colors.amber),
-                  Text('${viewModel.rating}'),
-                  SizedBox(width: 10),
-                  Text(
-                    '(${viewModel.numOfReviews})',
-                    style: TextStyle(fontSize: 14, color: Colors.grey),
-                  ),
+                  BookRating(rating: viewModel.rating,
+                      numOfReviews: viewModel.numOfReviews),
+
                 ],
               ),
             ],
