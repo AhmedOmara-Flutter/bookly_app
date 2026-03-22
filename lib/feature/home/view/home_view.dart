@@ -25,7 +25,7 @@ class HomeViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 10,),
+              SizedBox(height: 30,),
               CustomAppBar(),
               SizedBox(height: 30,),
               CustomHorizontalListView(),
@@ -40,7 +40,8 @@ class HomeViewBody extends StatelessWidget {
         ),
         SliverPadding(
             padding: EdgeInsetsGeometry.only(left: 20,right: 20,bottom: 20),
-            sliver: CustomBestSellerListView())
+            sliver: CustomBestSellerListView(),
+        )
       ],
     );
   }

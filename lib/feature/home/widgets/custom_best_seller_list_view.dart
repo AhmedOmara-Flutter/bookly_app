@@ -1,5 +1,8 @@
+import 'package:bookly_app/core/utils.dart';
 import 'package:bookly_app/feature/home/widgets/custom_best_seller_list_view_item.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
 import '../../../core/models/custom_best_seller_list_view_model.dart';
 import '../../../generated/assets.dart';
 
@@ -58,7 +61,12 @@ class _CustomBestSellerListViewState extends State<CustomBestSellerListView> {
   @override
   Widget build(BuildContext context) {
     return SliverList.separated(
-      itemBuilder: (context, index) => CustomBestSellerListViewItem(viewModel: books[index],),
+      itemBuilder: (context, index) => GestureDetector(
+        onTap: () {
+          GoRouter.of(context).push(AppRouter.homeViewDetails);
+        },
+        child: CustomBestSellerListViewItem(viewModel: books[index]),
+      ),
       separatorBuilder: (context, index) => SizedBox(height: 10),
       itemCount: books.length,
     );
