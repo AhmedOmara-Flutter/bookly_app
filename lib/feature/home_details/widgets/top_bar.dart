@@ -17,7 +17,9 @@ class TopBar extends StatelessWidget {
           icon: Icon(Icons.close),
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+
+          },
           icon: Icon(Icons.shopping_cart_outlined),
         ),
       ],
