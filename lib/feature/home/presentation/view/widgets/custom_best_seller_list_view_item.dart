@@ -1,10 +1,10 @@
-import 'package:bookly_app/core/models/custom_best_seller_list_view_model.dart';
+import 'package:bookly_app/core/models/custom_vertical_list_view_model.dart';
 import 'package:flutter/material.dart';
 
 import 'book_rating.dart';
 
 class CustomBestSellerListViewItem extends StatelessWidget {
-  final CustomBestSellerListViewModel viewModel;
+  final CustomVerticalListViewModel viewModel;
 
   const CustomBestSellerListViewItem({super.key, required this.viewModel});
 

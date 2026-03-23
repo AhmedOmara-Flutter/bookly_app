@@ -1,7 +1,6 @@
 import 'package:bookly_app/feature/search/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
-
-import '../../home/widgets/custom_best_seller_list_view.dart';
+import '../../home/presentation/view/widgets/custom_best_seller_list_view.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
@@ -15,7 +14,6 @@ class SearchViewBody extends StatelessWidget {
           SliverToBoxAdapter(
             child: Column(
               children: [
-                SizedBox(height: 30),
                 CustomTextFormField(),
                 SizedBox(height: 30),
                 SizedBox(
@@ -30,7 +28,7 @@ class SearchViewBody extends StatelessWidget {
               ],
             ),
           ),
-          CustomBestSellerListView(),
+          CustomVerticalListView(),
         ],
       ),
     );

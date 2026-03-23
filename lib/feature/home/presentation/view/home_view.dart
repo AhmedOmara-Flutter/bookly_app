@@ -1,6 +1,6 @@
-import 'package:bookly_app/feature/home/widgets/custom_app_bar.dart';
-import 'package:bookly_app/feature/home/widgets/custom_best_seller_list_view.dart';
-import 'package:bookly_app/feature/home/widgets/custom_horizontal_list_view.dart';
+import 'package:bookly_app/feature/home/presentation/view/widgets/custom_app_bar.dart';
+import 'package:bookly_app/feature/home/presentation/view/widgets/custom_best_seller_list_view.dart';
+import 'package:bookly_app/feature/home/presentation/view/widgets/custom_horizontal_list_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -40,7 +40,7 @@ class HomeViewBody extends StatelessWidget {
         ),
         SliverPadding(
             padding: EdgeInsetsGeometry.only(left: 20,right: 20,bottom: 20),
-            sliver: CustomBestSellerListView(),
+            sliver: CustomVerticalListView(),
         )
       ],
     );

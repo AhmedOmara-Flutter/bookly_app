@@ -1,22 +1,21 @@
+import 'package:bookly_app/core/models/custom_vertical_list_view_model.dart';
 import 'package:bookly_app/core/utils.dart';
-import 'package:bookly_app/feature/home/widgets/custom_best_seller_list_view_item.dart';
+import 'package:bookly_app/feature/home/presentation/view/widgets/custom_best_seller_list_view_item.dart';
+import 'package:bookly_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../core/models/custom_best_seller_list_view_model.dart';
-import '../../../generated/assets.dart';
-
-class CustomBestSellerListView extends StatefulWidget {
-  const CustomBestSellerListView({super.key});
+class CustomVerticalListView extends StatefulWidget {
+  const CustomVerticalListView({super.key});
 
   @override
-  State<CustomBestSellerListView> createState() =>
-      _CustomBestSellerListViewState();
+  State<CustomVerticalListView> createState() =>
+      _CustomVerticalListViewState();
 }
 
-class _CustomBestSellerListViewState extends State<CustomBestSellerListView> {
-  final List<CustomBestSellerListViewModel> books = [
-    CustomBestSellerListViewModel(
+class _CustomVerticalListViewState extends State<CustomVerticalListView> {
+  final List<CustomVerticalListViewModel> books = [
+    CustomVerticalListViewModel(
       title: 'Harry Potter and the Goblet of Fire',
       author: 'J.K. Rowling',
       price: '19.99 €',
@@ -24,7 +23,7 @@ class _CustomBestSellerListViewState extends State<CustomBestSellerListView> {
       rating: 4.8,
       numOfReviews: 2390,
     ),
-    CustomBestSellerListViewModel(
+    CustomVerticalListViewModel(
       title: 'The Jungle Book',
       author: 'Rudyard Kipling',
       price: '11.99 €',
@@ -32,7 +31,7 @@ class _CustomBestSellerListViewState extends State<CustomBestSellerListView> {
       rating: 4.2,
       numOfReviews: 1854,
     ),
-    CustomBestSellerListViewModel(
+    CustomVerticalListViewModel(
       title: 'The Jungle Book',
       author: 'Rudyard Kipling',
       price: '11.99 €',
@@ -40,7 +39,7 @@ class _CustomBestSellerListViewState extends State<CustomBestSellerListView> {
       rating: 4.2,
       numOfReviews: 1854,
     ),
-    CustomBestSellerListViewModel(
+    CustomVerticalListViewModel(
       title: 'Star Wars Return of the Jedi',
       author: 'James Kahn',
       price: '10.99 €',
@@ -48,7 +47,7 @@ class _CustomBestSellerListViewState extends State<CustomBestSellerListView> {
       rating: 4.5,
       numOfReviews: 5152,
     ),
-    CustomBestSellerListViewModel(
+    CustomVerticalListViewModel(
       title: 'Star Wars Return of the Jedi',
       author: 'James Kahn',
       price: '10.99 €',
@@ -63,7 +62,7 @@ class _CustomBestSellerListViewState extends State<CustomBestSellerListView> {
     return SliverList.separated(
       itemBuilder: (context, index) => GestureDetector(
         onTap: () {
-          GoRouter.of(context).push(AppRouter.homeViewDetails);
+          GoRouter.of(context).push(AppRouter.bookDetailsView);
         },
         child: CustomBestSellerListViewItem(viewModel: books[index]),
       ),

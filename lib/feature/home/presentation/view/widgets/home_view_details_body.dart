@@ -1,14 +1,13 @@
-import 'package:bookly_app/feature/home_details/widgets/book_image.dart';
-import 'package:bookly_app/feature/home_details/widgets/book_info.dart';
-import 'package:bookly_app/feature/home_details/widgets/price_action_button.dart';
-import 'package:bookly_app/feature/home_details/widgets/top_bar.dart';
+import 'package:bookly_app/feature/home/presentation/view/widgets/price_action_button.dart';
+import 'package:bookly_app/feature/home/presentation/view/widgets/top_bar.dart';
 import 'package:flutter/material.dart';
+import 'book_image.dart';
+import 'book_info.dart';
+import 'book_rating.dart';
+import 'custom_horizontal_list_view.dart';
 
-import '../../home/widgets/book_rating.dart';
-import '../../home/widgets/custom_horizontal_list_view.dart';
-
-class HomeViewDetailsBody extends StatelessWidget {
-  const HomeViewDetailsBody({super.key});
+class BookDetailsViewBody extends StatelessWidget {
+  const BookDetailsViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
