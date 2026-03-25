@@ -2,6 +2,9 @@ import 'package:bookly_app/feature/home/presentation/view/widgets/custom_app_bar
 import 'package:bookly_app/feature/home/presentation/view/widgets/custom_best_seller_list_view.dart';
 import 'package:bookly_app/feature/home/presentation/view/widgets/custom_horizontal_list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../view_model/home_view_cubit.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -9,7 +12,17 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: HomeViewBody(),
+      body: BlocProvider(
+        create: (context) => HomeViewCubit()..getTopRatedBooks(),
+        child: BlocConsumer<HomeViewCubit, HomeViewState>(
+          listener: (context, state) {
+            // TODO: implement listener
+          },
+          builder: (context, state) {
+            return HomeViewBody();
+          },
+        ),
+      ),
     );
   }
 }
@@ -39,8 +52,8 @@ class HomeViewBody extends StatelessWidget {
           ),
         ),
         SliverPadding(
-            padding: EdgeInsetsGeometry.only(left: 20,right: 20,bottom: 20),
-            sliver: CustomVerticalListView(),
+          padding: EdgeInsetsGeometry.only(left: 20, right: 20, bottom: 20),
+          sliver: CustomVerticalListView(),
         )
       ],
     );

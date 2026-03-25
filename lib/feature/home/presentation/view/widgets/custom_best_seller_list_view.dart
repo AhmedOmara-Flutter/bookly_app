@@ -1,9 +1,9 @@
 import 'package:bookly_app/core/models/custom_vertical_list_view_model.dart';
-import 'package:bookly_app/core/utils.dart';
 import 'package:bookly_app/feature/home/presentation/view/widgets/custom_best_seller_list_view_item.dart';
 import 'package:bookly_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../../../../core/utils/app_router.dart';
 
 class CustomVerticalListView extends StatefulWidget {
   const CustomVerticalListView({super.key});
