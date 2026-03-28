@@ -1,31 +1,16 @@
-import 'package:bookly_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../view_model/home_view_cubit.dart';
+import '../../view_model/top_rated_daily_cubit/top_rated_daily_cubit.dart';
 import 'custom_horizontal_list_view_item.dart';
 
-class CustomHorizontalListView extends StatefulWidget {
+class CustomHorizontalListView extends StatelessWidget {
   const CustomHorizontalListView({super.key});
 
   @override
-  State<CustomHorizontalListView> createState() =>
-      _CustomHorizontalListViewState();
-}
-
-class _CustomHorizontalListViewState extends State<CustomHorizontalListView> {
-
-  final List<String> books = [
-    Assets.images.book1High.path,
-    Assets.images.book2High.path,
-    Assets.images.harryPotterAndThe.path,
-  ];
-
-  @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeViewCubit, HomeViewState>(
+    return BlocBuilder<TopRatedDailyCubit, TopRatedDailyState>(
       builder: (context, state) {
-        if (state is HomeViewSuccess) {
+        if (state is TopRatedDailyBooksSuccess) {
           final books = state.books;
           return SizedBox(
             height: MediaQuery
@@ -46,7 +31,7 @@ class _CustomHorizontalListViewState extends State<CustomHorizontalListView> {
               itemCount: books.length,
             ),
           );
-        } else if (state is HomeViewError) {
+        } else if (state is TopRatedDailyBooksError) {
           return Text(state.message);
         }
         return Center(child: CircularProgressIndicator());

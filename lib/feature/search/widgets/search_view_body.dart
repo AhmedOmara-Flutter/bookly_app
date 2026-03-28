@@ -1,6 +1,6 @@
 import 'package:bookly_app/feature/search/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
-import '../../home/presentation/view/widgets/custom_best_seller_list_view.dart';
+import '../../home/presentation/view/widgets/custom_vertical_list_view.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});

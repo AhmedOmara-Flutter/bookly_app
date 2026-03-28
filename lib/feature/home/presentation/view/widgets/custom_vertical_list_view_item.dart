@@ -1,13 +1,13 @@
 import 'package:bookly_app/core/models/custom_vertical_list_view_model.dart';
 import 'package:flutter/material.dart';
 
+import '../../../data/model/book_model.dart';
 import 'book_rating.dart';
 
 class CustomBestSellerListViewItem extends StatelessWidget {
-  final CustomVerticalListViewModel viewModel;
+  final BookModel viewModel;
 
   const CustomBestSellerListViewItem({super.key, required this.viewModel});
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,7 +18,7 @@ class CustomBestSellerListViewItem extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             image: DecorationImage(
-              image: AssetImage(viewModel.image),
+              image: NetworkImage('https://covers.openlibrary.org/b/id/${viewModel.coverI}-L.jpg'),
               fit: BoxFit.cover,
             ),
           ),
@@ -29,27 +29,29 @@ class CustomBestSellerListViewItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                viewModel.title,
+                viewModel.title??'Untitled',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
               SizedBox(height: 10),
-              Text(
-                viewModel.author,
-                style: TextStyle(fontSize: 14, color: Colors.grey),
-              ),
+              // ...viewModel.authorName!.map((e){
+              //   return Text(
+              //     e,
+              //     style: TextStyle(fontSize: 14, color: Colors.grey),
+              //   );
+              // }),
               SizedBox(height: 10),
               Row(
                 children: [
                   Text(
-                    viewModel.price,
+                  r'19.99$',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(width: 10),
                   Spacer(),
-                  BookRating(rating: viewModel.rating,
-                      numOfReviews: viewModel.numOfReviews),
+                  BookRating(rating: 0.0,
+                      numOfReviews: viewModel.editionCount!.toInt()),
 
                 ],
               ),
