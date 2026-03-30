@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../view_model/similar_books_cubit/similar_books_cubit.dart';
-import '../../view_model/top_rated_daily_cubit/top_rated_daily_cubit.dart';
 import 'custom_horizontal_list_view_item.dart';
 
 class CustomSimilarListView extends StatelessWidget {
@@ -22,7 +21,7 @@ class CustomSimilarListView extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 20),
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                final image = 'https://covers.openlibrary.org/b/id/${books[index].coverId}-L.jpg';
+                final image = '${books[index].volumeInfo!.imageLinks!.thumbnail}';
                 return CustomHorizontalListViewItem(
                   image: image,
                 );

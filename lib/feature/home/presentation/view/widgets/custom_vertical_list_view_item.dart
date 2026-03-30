@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../data/model/book_model.dart';
 import 'book_rating.dart';
 
@@ -16,7 +17,8 @@ class CustomVerticalListViewItem extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             image: DecorationImage(
-              image: NetworkImage('https://covers.openlibrary.org/b/id/${viewModel.coverI}-L.jpg'),
+              image: NetworkImage(
+                  viewModel.volumeInfo!.imageLinks!.thumbnail ?? ''),
               fit: BoxFit.cover,
             ),
           ),
@@ -27,13 +29,13 @@ class CustomVerticalListViewItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                viewModel.title??'Untitled',
+                viewModel.volumeInfo!.title ?? 'Untitled',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
               SizedBox(height: 10),
-              ...viewModel.authorName!.map((e){
+              ...viewModel.volumeInfo!.authors!.map((e) {
                 return Text(
                   e,
                   style: TextStyle(fontSize: 14, color: Colors.grey),
@@ -48,8 +50,8 @@ class CustomVerticalListViewItem extends StatelessWidget {
                   ),
                   SizedBox(width: 10),
                   Spacer(),
-                  BookRating(rating: 0.0,
-                      numOfReviews: viewModel.editionCount!.toInt()),
+                  BookRating(rating: 4.0,
+                      numOfReviews: 1542),
 
                 ],
               ),

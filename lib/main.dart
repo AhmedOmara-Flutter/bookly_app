@@ -1,11 +1,10 @@
+import 'package:bookly_app/feature/home/presentation/view_model/featured_books_cubit/featured_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'core/utils/app_router.dart';
 import 'core/utils/bloc_observer.dart';
 import 'core/utils/service_locator.dart';
-import 'feature/home/presentation/view_model/top_rated_daily_cubit/top_rated_daily_cubit.dart';
-import 'feature/home/presentation/view_model/top_rated_weekly_cubit/top_rated_weekly_cubit.dart';
+import 'feature/home/presentation/view_model/best_seller_books_cubit/best_seller_books_cubit.dart';
 
 void main() {
   initAppModule();
@@ -20,8 +19,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) =>TopRatedDailyCubit(instance())..getTopRatedDailyBooks()),
-        BlocProvider(create: (context) =>TopRatedWeeklyCubit(instance())..getTopRatedWeaklyBooks()),
+        BlocProvider(create: (context) =>BestSellerBooksCubit(instance())..bestSellerBooks()),
+        BlocProvider(create: (context) =>FeaturedBooksCubit(instance())..getFeaturedBooks()),
 
       ],
       child: MaterialApp.router(

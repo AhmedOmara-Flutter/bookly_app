@@ -17,7 +17,7 @@ class BookImage extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             image: DecorationImage(
-              image:NetworkImage('https://covers.openlibrary.org/b/id/$image-L.jpg'),
+              image:NetworkImage(image),
               fit: BoxFit.fill,
             ),
           ),

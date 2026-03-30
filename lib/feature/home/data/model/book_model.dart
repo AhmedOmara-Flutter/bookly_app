@@ -1,92 +1,421 @@
-// / author_key : ["OL124962A","OL5453611A","OL941299A","OL2850039A"]
-// / author_name : ["Saint Ignatius of Loyola","Aloysio R.P Bellecio","Ignatius.","William, S.J. Reiser"]
-// / cover_edition_key : "OL20062013M"
-// / cover_i : 8027976
-// / ebook_access : "public"
-// / edition_count : 145
-// / first_publish_year : 1548
-// / has_fulltext : true
-// / ia : ["TheSpiritualExercisesIgnatius","ExercitiaSPIgnatiiDeLoyola","TheSpiritualExercisesOfStIgnatius","a588350800loyouoft","meditationsignat00ignauoft","exercitiaspiritu00igna_0","spiritualexercis0000igna_v4z4","textofspirituale00ignauoft","manresaspiritual00ignauoft","spiritualexercis00ignauoft","spiritualexercis00igna_3","spiritualexercis0000igna_e2n0","spiritualexercis0000igna","spiritualexercis00ignarich","spiritualexercis0000igna_y1h3","spiritualexercis0000igna_a0p8","spiritualexercis0000igna_y6f9","spiritualexercis00igna_0"]
-// / ia_collection : ["Boston_College_Library","Princeton","PrincetonRR","americana","belmont-ol","blc","catholictexts","claremont_school_of_theology","cua-ol","denverpubliclibrary-ol","folkscanomy","folkscanomy_miscellaneous","folkscanomy_religion","inlibrary","internetarchivebooks","jesuitica","kellylibrary","marygrovecollege","openlibrary-d-ol","printdisabled","riceuniversity-ol","rochester-ol","saint_marys_college","toronto","trent_university","university_of_toronto"]
-// / key : "/works/OL1238284W"
-// / language : ["mul","lat","ger","ita","spa","cat","eng","fre","cze"]
-// / lending_edition_s : "OL26217030M"
-// / lending_identifier_s : "TheSpiritualExercisesIgnatius"
-// / public_scan_b : true
-// / title : "Exercitia spiritualia"
+/// kind : "books#volume"
+/// id : "FSTRAgAAQBAJ"
+/// etag : "HK/I6Hq1LW4"
+/// selfLink : "https://www.googleapis.com/books/v1/volumes/FSTRAgAAQBAJ"
+/// volumeInfo : {"title":"Kokoro","subtitle":"Hints and Echoes of Japanese Inner Life","authors":["Lafcadio Hearn"],"publisher":"Tuttle Publishing","publishedDate":"2012-12-20","description":"The 15 classic essays collected in Kokoro examine the inner spiritual life of Japan. The title itself can be translated as \"heart,\" \"spirit\" or \"inner meaning,\" and that's exactly what this collection teaches us about Japan. Sometimes touching and always compelling, the writings here tell the stories of the people and social codes that make Japan the unique place it is. \"Kimiko\" paints the portrait of a beautiful geisha; \"By Force of Karma\" tells the story of a Buddhist monk; and in \"A Conservative,\" we come to know the thoughts and actions of a Samurai. As an early interpreter of Japan to the West, Lafcadio Hearn was without parallel in his time. His numerous books about that country were read with a fascination that was a tribute to his keen powers of observation and the vividness of his descriptions. Today, even though Japan has changed greatly from what it was when he wrote about it, his writing is still valid, for it captures the essence of the country--an essence that has actually changed a good deal less than outward appearances might suggest. In a word, the Japanese character and the Japanese tradition are still fundamentally the same as Hearn found them to be, and for this reason, his books are still extremely revealing to readers in the West.","industryIdentifiers":[{"type":"ISBN_13","identifier":"9781462900251"},{"type":"ISBN_10","identifier":"1462900259"}],"readingModes":{"text":true,"image":true},"pageCount":267,"printType":"BOOK","categories":["Literary Collections"],"maturityRating":"NOT_MATURE","allowAnonLogging":false,"contentVersion":"1.10.12.0.preview.3","panelizationSummary":{"containsEpubBubbles":false,"containsImageBubbles":false},"imageLinks":{"smallThumbnail":"http://books.google.com/books/content?id=FSTRAgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api","thumbnail":"http://books.google.com/books/content?id=FSTRAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"},"language":"en","previewLink":"http://books.google.com.eg/books?id=FSTRAgAAQBAJ&printsec=frontcover&dq=subject:fiction&hl=&cd=1&source=gbs_api","infoLink":"http://books.google.com.eg/books?id=FSTRAgAAQBAJ&dq=subject:fiction&hl=&source=gbs_api","canonicalVolumeLink":"https://books.google.com/books/about/Kokoro.html?hl=&id=FSTRAgAAQBAJ"}
+/// saleInfo : {"country":"EG","saleability":"NOT_FOR_SALE","isEbook":false}
+/// accessInfo : {"country":"EG","viewability":"PARTIAL","embeddable":true,"publicDomain":false,"textToSpeechPermission":"ALLOWED","epub":{"isAvailable":true,"acsTokenLink":"http://books.google.com.eg/books/download/Kokoro-sample-epub.acsm?id=FSTRAgAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"},"pdf":{"isAvailable":true,"acsTokenLink":"http://books.google.com.eg/books/download/Kokoro-sample-pdf.acsm?id=FSTRAgAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"},"webReaderLink":"http://play.google.com/books/reader?id=FSTRAgAAQBAJ&hl=&source=gbs_api","accessViewStatus":"SAMPLE","quoteSharingAllowed":false}
 
 class BookModel {
   BookModel({
-      this.authorKey, 
-      this.authorName, 
-      this.coverEditionKey, 
-      this.coverI, 
-      this.ebookAccess, 
-      this.editionCount, 
-      this.firstPublishYear, 
-      this.hasFulltext, 
-      this.ia, 
-      this.iaCollection, 
-      this.key, 
-      this.language, 
-      this.lendingEditionS, 
-      this.lendingIdentifierS, 
-      this.publicScanB, 
-      this.title,});
+      this.kind, 
+      this.id, 
+      this.etag, 
+      this.selfLink, 
+      this.volumeInfo, 
+      this.saleInfo, 
+      this.accessInfo,});
 
   BookModel.fromJson(dynamic json) {
-    authorKey = json['author_key'] != null ? json['author_key'].cast<String>() : [];
-    authorName = json['author_name'] != null ? json['author_name'].cast<String>() : [];
-    coverEditionKey = json['cover_edition_key'];
-    coverI = json['cover_i'];
-    ebookAccess = json['ebook_access'];
-    editionCount = json['edition_count'];
-    firstPublishYear = json['first_publish_year'];
-    hasFulltext = json['has_fulltext'];
-    ia = json['ia'] != null ? json['ia'].cast<String>() : [];
-    iaCollection = json['ia_collection'] != null ? json['ia_collection'].cast<String>() : [];
-    key = json['key'];
-    language = json['language'] != null ? json['language'].cast<String>() : [];
-    lendingEditionS = json['lending_edition_s'];
-    lendingIdentifierS = json['lending_identifier_s'];
-    publicScanB = json['public_scan_b'];
-    title = json['title'];
+    kind = json['kind'];
+    id = json['id'];
+    etag = json['etag'];
+    selfLink = json['selfLink'];
+    volumeInfo = json['volumeInfo'] != null ? VolumeInfo.fromJson(json['volumeInfo']) : null;
+    saleInfo = json['saleInfo'] != null ? SaleInfo.fromJson(json['saleInfo']) : null;
+    accessInfo = json['accessInfo'] != null ? AccessInfo.fromJson(json['accessInfo']) : null;
   }
-  List<String>? authorKey;
-  List<String>? authorName;
-  String? coverEditionKey;
-  num? coverI;
-  String? ebookAccess;
-  num? editionCount;
-  num? firstPublishYear;
-  bool? hasFulltext;
-  List<String>? ia;
-  List<String>? iaCollection;
-  String? key;
-  List<String>? language;
-  String? lendingEditionS;
-  String? lendingIdentifierS;
-  bool? publicScanB;
-  String? title;
+  String? kind;
+  String? id;
+  String? etag;
+  String? selfLink;
+  VolumeInfo? volumeInfo;
+  SaleInfo? saleInfo;
+  AccessInfo? accessInfo;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    map['author_key'] = authorKey;
-    map['author_name'] = authorName;
-    map['cover_edition_key'] = coverEditionKey;
-    map['cover_i'] = coverI;
-    map['ebook_access'] = ebookAccess;
-    map['edition_count'] = editionCount;
-    map['first_publish_year'] = firstPublishYear;
-    map['has_fulltext'] = hasFulltext;
-    map['ia'] = ia;
-    map['ia_collection'] = iaCollection;
-    map['key'] = key;
-    map['language'] = language;
-    map['lending_edition_s'] = lendingEditionS;
-    map['lending_identifier_s'] = lendingIdentifierS;
-    map['public_scan_b'] = publicScanB;
+    map['kind'] = kind;
+    map['id'] = id;
+    map['etag'] = etag;
+    map['selfLink'] = selfLink;
+    if (volumeInfo != null) {
+      map['volumeInfo'] = volumeInfo?.toJson();
+    }
+    if (saleInfo != null) {
+      map['saleInfo'] = saleInfo?.toJson();
+    }
+    if (accessInfo != null) {
+      map['accessInfo'] = accessInfo?.toJson();
+    }
+    return map;
+  }
+
+}
+
+/// country : "EG"
+/// viewability : "PARTIAL"
+/// embeddable : true
+/// publicDomain : false
+/// textToSpeechPermission : "ALLOWED"
+/// epub : {"isAvailable":true,"acsTokenLink":"http://books.google.com.eg/books/download/Kokoro-sample-epub.acsm?id=FSTRAgAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"}
+/// pdf : {"isAvailable":true,"acsTokenLink":"http://books.google.com.eg/books/download/Kokoro-sample-pdf.acsm?id=FSTRAgAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"}
+/// webReaderLink : "http://play.google.com/books/reader?id=FSTRAgAAQBAJ&hl=&source=gbs_api"
+/// accessViewStatus : "SAMPLE"
+/// quoteSharingAllowed : false
+
+class AccessInfo {
+  AccessInfo({
+      this.country, 
+      this.viewability, 
+      this.embeddable, 
+      this.publicDomain, 
+      this.textToSpeechPermission, 
+      this.epub, 
+      this.pdf, 
+      this.webReaderLink, 
+      this.accessViewStatus, 
+      this.quoteSharingAllowed,});
+
+  AccessInfo.fromJson(dynamic json) {
+    country = json['country'];
+    viewability = json['viewability'];
+    embeddable = json['embeddable'];
+    publicDomain = json['publicDomain'];
+    textToSpeechPermission = json['textToSpeechPermission'];
+    epub = json['epub'] != null ? Epub.fromJson(json['epub']) : null;
+    pdf = json['pdf'] != null ? Pdf.fromJson(json['pdf']) : null;
+    webReaderLink = json['webReaderLink'];
+    accessViewStatus = json['accessViewStatus'];
+    quoteSharingAllowed = json['quoteSharingAllowed'];
+  }
+  String? country;
+  String? viewability;
+  bool? embeddable;
+  bool? publicDomain;
+  String? textToSpeechPermission;
+  Epub? epub;
+  Pdf? pdf;
+  String? webReaderLink;
+  String? accessViewStatus;
+  bool? quoteSharingAllowed;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['country'] = country;
+    map['viewability'] = viewability;
+    map['embeddable'] = embeddable;
+    map['publicDomain'] = publicDomain;
+    map['textToSpeechPermission'] = textToSpeechPermission;
+    if (epub != null) {
+      map['epub'] = epub?.toJson();
+    }
+    if (pdf != null) {
+      map['pdf'] = pdf?.toJson();
+    }
+    map['webReaderLink'] = webReaderLink;
+    map['accessViewStatus'] = accessViewStatus;
+    map['quoteSharingAllowed'] = quoteSharingAllowed;
+    return map;
+  }
+
+}
+
+/// isAvailable : true
+/// acsTokenLink : "http://books.google.com.eg/books/download/Kokoro-sample-pdf.acsm?id=FSTRAgAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+
+class Pdf {
+  Pdf({
+      this.isAvailable, 
+      this.acsTokenLink,});
+
+  Pdf.fromJson(dynamic json) {
+    isAvailable = json['isAvailable'];
+    acsTokenLink = json['acsTokenLink'];
+  }
+  bool? isAvailable;
+  String? acsTokenLink;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['isAvailable'] = isAvailable;
+    map['acsTokenLink'] = acsTokenLink;
+    return map;
+  }
+
+}
+
+/// isAvailable : true
+/// acsTokenLink : "http://books.google.com.eg/books/download/Kokoro-sample-epub.acsm?id=FSTRAgAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+
+class Epub {
+  Epub({
+      this.isAvailable, 
+      this.acsTokenLink,});
+
+  Epub.fromJson(dynamic json) {
+    isAvailable = json['isAvailable'];
+    acsTokenLink = json['acsTokenLink'];
+  }
+  bool? isAvailable;
+  String? acsTokenLink;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['isAvailable'] = isAvailable;
+    map['acsTokenLink'] = acsTokenLink;
+    return map;
+  }
+
+}
+
+/// country : "EG"
+/// saleability : "NOT_FOR_SALE"
+/// isEbook : false
+
+class SaleInfo {
+  SaleInfo({
+      this.country, 
+      this.saleability, 
+      this.isEbook,});
+
+  SaleInfo.fromJson(dynamic json) {
+    country = json['country'];
+    saleability = json['saleability'];
+    isEbook = json['isEbook'];
+  }
+  String? country;
+  String? saleability;
+  bool? isEbook;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['country'] = country;
+    map['saleability'] = saleability;
+    map['isEbook'] = isEbook;
+    return map;
+  }
+
+}
+
+/// title : "Kokoro"
+/// subtitle : "Hints and Echoes of Japanese Inner Life"
+/// authors : ["Lafcadio Hearn"]
+/// publisher : "Tuttle Publishing"
+/// publishedDate : "2012-12-20"
+/// description : "The 15 classic essays collected in Kokoro examine the inner spiritual life of Japan. The title itself can be translated as \"heart,\" \"spirit\" or \"inner meaning,\" and that's exactly what this collection teaches us about Japan. Sometimes touching and always compelling, the writings here tell the stories of the people and social codes that make Japan the unique place it is. \"Kimiko\" paints the portrait of a beautiful geisha; \"By Force of Karma\" tells the story of a Buddhist monk; and in \"A Conservative,\" we come to know the thoughts and actions of a Samurai. As an early interpreter of Japan to the West, Lafcadio Hearn was without parallel in his time. His numerous books about that country were read with a fascination that was a tribute to his keen powers of observation and the vividness of his descriptions. Today, even though Japan has changed greatly from what it was when he wrote about it, his writing is still valid, for it captures the essence of the country--an essence that has actually changed a good deal less than outward appearances might suggest. In a word, the Japanese character and the Japanese tradition are still fundamentally the same as Hearn found them to be, and for this reason, his books are still extremely revealing to readers in the West."
+/// industryIdentifiers : [{"type":"ISBN_13","identifier":"9781462900251"},{"type":"ISBN_10","identifier":"1462900259"}]
+/// readingModes : {"text":true,"image":true}
+/// pageCount : 267
+/// printType : "BOOK"
+/// categories : ["Literary Collections"]
+/// maturityRating : "NOT_MATURE"
+/// allowAnonLogging : false
+/// contentVersion : "1.10.12.0.preview.3"
+/// panelizationSummary : {"containsEpubBubbles":false,"containsImageBubbles":false}
+/// imageLinks : {"smallThumbnail":"http://books.google.com/books/content?id=FSTRAgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api","thumbnail":"http://books.google.com/books/content?id=FSTRAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"}
+/// language : "en"
+/// previewLink : "http://books.google.com.eg/books?id=FSTRAgAAQBAJ&printsec=frontcover&dq=subject:fiction&hl=&cd=1&source=gbs_api"
+/// infoLink : "http://books.google.com.eg/books?id=FSTRAgAAQBAJ&dq=subject:fiction&hl=&source=gbs_api"
+/// canonicalVolumeLink : "https://books.google.com/books/about/Kokoro.html?hl=&id=FSTRAgAAQBAJ"
+
+class VolumeInfo {
+  VolumeInfo({
+      this.title, 
+      this.subtitle, 
+      this.authors, 
+      this.publisher, 
+      this.publishedDate, 
+      this.description, 
+      this.industryIdentifiers, 
+      this.readingModes, 
+      this.pageCount, 
+      this.printType, 
+      this.categories, 
+      this.maturityRating, 
+      this.allowAnonLogging, 
+      this.contentVersion, 
+      this.panelizationSummary, 
+      this.imageLinks, 
+      this.language, 
+      this.previewLink, 
+      this.infoLink, 
+      this.canonicalVolumeLink,});
+
+  VolumeInfo.fromJson(dynamic json) {
+    title = json['title'];
+    subtitle = json['subtitle'];
+    authors = json['authors'] != null ? json['authors'].cast<String>() : [];
+    publisher = json['publisher'];
+    publishedDate = json['publishedDate'];
+    description = json['description'];
+    if (json['industryIdentifiers'] != null) {
+      industryIdentifiers = [];
+      json['industryIdentifiers'].forEach((v) {
+        industryIdentifiers?.add(IndustryIdentifiers.fromJson(v));
+      });
+    }
+    readingModes = json['readingModes'] != null ? ReadingModes.fromJson(json['readingModes']) : null;
+    pageCount = json['pageCount'];
+    printType = json['printType'];
+    categories = json['categories'] != null ? json['categories'].cast<String>() : [];
+    maturityRating = json['maturityRating'];
+    allowAnonLogging = json['allowAnonLogging'];
+    contentVersion = json['contentVersion'];
+    panelizationSummary = json['panelizationSummary'] != null ? PanelizationSummary.fromJson(json['panelizationSummary']) : null;
+    imageLinks = json['imageLinks'] != null ? ImageLinks.fromJson(json['imageLinks']) : null;
+    language = json['language'];
+    previewLink = json['previewLink'];
+    infoLink = json['infoLink'];
+    canonicalVolumeLink = json['canonicalVolumeLink'];
+  }
+  String? title;
+  String? subtitle;
+  List<String>? authors;
+  String? publisher;
+  String? publishedDate;
+  String? description;
+  List<IndustryIdentifiers>? industryIdentifiers;
+  ReadingModes? readingModes;
+  num? pageCount;
+  String? printType;
+  List<String>? categories;
+  String? maturityRating;
+  bool? allowAnonLogging;
+  String? contentVersion;
+  PanelizationSummary? panelizationSummary;
+  ImageLinks? imageLinks;
+  String? language;
+  String? previewLink;
+  String? infoLink;
+  String? canonicalVolumeLink;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
     map['title'] = title;
+    map['subtitle'] = subtitle;
+    map['authors'] = authors;
+    map['publisher'] = publisher;
+    map['publishedDate'] = publishedDate;
+    map['description'] = description;
+    if (industryIdentifiers != null) {
+      map['industryIdentifiers'] = industryIdentifiers?.map((v) => v.toJson()).toList();
+    }
+    if (readingModes != null) {
+      map['readingModes'] = readingModes?.toJson();
+    }
+    map['pageCount'] = pageCount;
+    map['printType'] = printType;
+    map['categories'] = categories;
+    map['maturityRating'] = maturityRating;
+    map['allowAnonLogging'] = allowAnonLogging;
+    map['contentVersion'] = contentVersion;
+    if (panelizationSummary != null) {
+      map['panelizationSummary'] = panelizationSummary?.toJson();
+    }
+    if (imageLinks != null) {
+      map['imageLinks'] = imageLinks?.toJson();
+    }
+    map['language'] = language;
+    map['previewLink'] = previewLink;
+    map['infoLink'] = infoLink;
+    map['canonicalVolumeLink'] = canonicalVolumeLink;
+    return map;
+  }
+
+}
+
+/// smallThumbnail : "http://books.google.com/books/content?id=FSTRAgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"
+/// thumbnail : "http://books.google.com/books/content?id=FSTRAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+
+class ImageLinks {
+  ImageLinks({
+      this.smallThumbnail, 
+      this.thumbnail,});
+
+  ImageLinks.fromJson(dynamic json) {
+    smallThumbnail = json['smallThumbnail'];
+    thumbnail = json['thumbnail'];
+  }
+  String? smallThumbnail;
+  String? thumbnail;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['smallThumbnail'] = smallThumbnail;
+    map['thumbnail'] = thumbnail;
+    return map;
+  }
+
+}
+
+/// containsEpubBubbles : false
+/// containsImageBubbles : false
+
+class PanelizationSummary {
+  PanelizationSummary({
+      this.containsEpubBubbles, 
+      this.containsImageBubbles,});
+
+  PanelizationSummary.fromJson(dynamic json) {
+    containsEpubBubbles = json['containsEpubBubbles'];
+    containsImageBubbles = json['containsImageBubbles'];
+  }
+  bool? containsEpubBubbles;
+  bool? containsImageBubbles;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['containsEpubBubbles'] = containsEpubBubbles;
+    map['containsImageBubbles'] = containsImageBubbles;
+    return map;
+  }
+
+}
+
+/// text : true
+/// image : true
+
+class ReadingModes {
+  ReadingModes({
+      this.text, 
+      this.image,});
+
+  ReadingModes.fromJson(dynamic json) {
+    text = json['text'];
+    image = json['image'];
+  }
+  bool? text;
+  bool? image;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['text'] = text;
+    map['image'] = image;
+    return map;
+  }
+
+}
+
+/// type : "ISBN_13"
+/// identifier : "9781462900251"
+
+class IndustryIdentifiers {
+  IndustryIdentifiers({
+      this.type, 
+      this.identifier,});
+
+  IndustryIdentifiers.fromJson(dynamic json) {
+    type = json['type'];
+    identifier = json['identifier'];
+  }
+  String? type;
+  String? identifier;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['type'] = type;
+    map['identifier'] = identifier;
     return map;
   }
 

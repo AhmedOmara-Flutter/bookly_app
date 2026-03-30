@@ -1,6 +1,6 @@
+import 'package:bookly_app/feature/home/presentation/view_model/featured_books_cubit/featured_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../view_model/top_rated_daily_cubit/top_rated_daily_cubit.dart';
 import 'custom_horizontal_list_view_item.dart';
 
 class CustomHorizontalListView extends StatelessWidget {
@@ -8,9 +8,9 @@ class CustomHorizontalListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<TopRatedDailyCubit, TopRatedDailyState>(
+    return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
       builder: (context, state) {
-        if (state is TopRatedDailyBooksSuccess) {
+        if (state is FeaturedBooksSuccess) {
           final books = state.books;
           return SizedBox(
             height: MediaQuery
@@ -21,17 +21,16 @@ class CustomHorizontalListView extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 20),
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                final image = 'https://covers.openlibrary.org/b/id/${books[index]
-                    .coverI}-L.jpg';
+                final image = books[index].volumeInfo!.imageLinks!.thumbnail;
                 return CustomHorizontalListViewItem(
-                  image: image,
+                  image: image??'',
                 );
               },
               separatorBuilder: (context, index) => SizedBox(width: 10),
               itemCount: books.length,
             ),
           );
-        } else if (state is TopRatedDailyBooksError) {
+        } else if (state is FeaturedBooksError) {
           return Text(state.message);
         }
         return Center(child: CircularProgressIndicator());
