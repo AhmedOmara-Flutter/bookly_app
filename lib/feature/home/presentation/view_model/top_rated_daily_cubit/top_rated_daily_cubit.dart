@@ -18,7 +18,6 @@ class TopRatedDailyCubit extends Cubit<TopRatedDailyState> {
       print(failure);
       emit(TopRatedDailyBooksError(message: failure.message));
     }, (data) {
-      print('featured is $data');
       emit(TopRatedDailyBooksSuccess(books: data));
     });
   }

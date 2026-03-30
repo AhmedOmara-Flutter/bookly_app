@@ -18,7 +18,6 @@ class TopRatedWeeklyCubit extends Cubit<TopRatedWeeklyState> {
       print(failure);
       emit(TopRatedWeaklyBooksError(message: failure.message));
     }, (data) {
-      print('topRated is $data');
       emit(TopRatedWeaklyBooksSuccess(books: data));
     });
   }

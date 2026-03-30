@@ -1,13 +1,11 @@
-import 'package:bookly_app/core/models/custom_vertical_list_view_model.dart';
 import 'package:flutter/material.dart';
-
 import '../../../data/model/book_model.dart';
 import 'book_rating.dart';
 
-class CustomBestSellerListViewItem extends StatelessWidget {
+class CustomVerticalListViewItem extends StatelessWidget {
   final BookModel viewModel;
 
-  const CustomBestSellerListViewItem({super.key, required this.viewModel});
+  const CustomVerticalListViewItem({super.key, required this.viewModel});
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -35,12 +33,12 @@ class CustomBestSellerListViewItem extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
               SizedBox(height: 10),
-              // ...viewModel.authorName!.map((e){
-              //   return Text(
-              //     e,
-              //     style: TextStyle(fontSize: 14, color: Colors.grey),
-              //   );
-              // }),
+              ...viewModel.authorName!.map((e){
+                return Text(
+                  e,
+                  style: TextStyle(fontSize: 14, color: Colors.grey),
+                );
+              }),
               SizedBox(height: 10),
               Row(
                 children: [

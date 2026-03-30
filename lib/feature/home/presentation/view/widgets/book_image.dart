@@ -2,8 +2,9 @@ import 'package:bookly_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 
 class BookImage extends StatelessWidget {
+  final String image;
   const BookImage({
-    super.key,
+    super.key, required this.image,
   });
 
   @override
@@ -16,7 +17,7 @@ class BookImage extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             image: DecorationImage(
-              image: AssetImage(Assets.images.book.path),
+              image:NetworkImage('https://covers.openlibrary.org/b/id/$image-L.jpg'),
               fit: BoxFit.fill,
             ),
           ),

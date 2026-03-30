@@ -20,9 +20,9 @@ class CustomVerticalListView extends StatelessWidget {
             itemBuilder: (context, index) =>
                 GestureDetector(
                   onTap: () {
-                    GoRouter.of(context).push(AppRouter.bookDetailsView);
+                    GoRouter.of(context).push(AppRouter.bookDetailsView, extra: books[index]);
                   },
-                  child: CustomBestSellerListViewItem(viewModel: books[index]),
+                  child: CustomVerticalListViewItem(viewModel: books[index]),
                 ),
             separatorBuilder: (context, index) => SizedBox(height: 10),
             itemCount: books.length,

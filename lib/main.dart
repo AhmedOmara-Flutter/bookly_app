@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) =>TopRatedDailyCubit(instance())..getTopRatedDailyBooks()),
         BlocProvider(create: (context) =>TopRatedWeeklyCubit(instance())..getTopRatedWeaklyBooks()),
+
       ],
       child: MaterialApp.router(
             routerConfig: AppRouter.router,
